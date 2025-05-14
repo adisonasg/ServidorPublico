@@ -10,6 +10,9 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<Servidor> Servidores { get; set; } = null!;
+    public DbSet<Orgao> Orgaos { get; set; } = null!;
+    public DbSet<Lotacao> Lotacoes { get; set; } = null!;
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

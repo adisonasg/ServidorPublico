@@ -15,17 +15,14 @@ public class CreateServidorCommandHandler : IRequestHandler<CreateServidorComman
 
     public async Task<Guid> Handle(CreateServidorCommand request, CancellationToken cancellationToken)
     {
-        var servidor = new Servidor
-        {
-            Id = Guid.NewGuid(),
-            Nome = request.Nome,
-            Telefone = request.Telefone,
-            Email = request.Email,
-            OrgaoId = request.OrgaoId,
-            LotacaoId = request.LotacaoId,
-            Sala = request.Sala,
-            Ativo = true
-        };
+        var servidor = new Servidor(
+            nome: request.Nome,
+            orgaoId: request.OrgaoId,
+            lotacaoId: request.LotacaoId,
+            telefone: request.Telefone,
+            email: request.Email,
+            sala: request.Sala
+        );
 
         _context.Servidores.Add(servidor);
         await _context.SaveChangesAsync(cancellationToken);

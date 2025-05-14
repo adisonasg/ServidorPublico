@@ -4,7 +4,8 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using MediatR;
-using ServidorPublico.API.Infrastructure.Data;
+using ServidorPublico.Infrastructure.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,10 +44,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
+

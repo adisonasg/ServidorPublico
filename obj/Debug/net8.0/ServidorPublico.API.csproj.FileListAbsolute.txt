@@ -164,3 +164,4 @@ C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.
 C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ServidorPublico.API.pdb
 C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ServidorPublico.API.genruntimeconfig.cache
 C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ref\ServidorPublico.API.dll
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ServidorPublico.API.sourcelink.json

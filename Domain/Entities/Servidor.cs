@@ -18,7 +18,10 @@ public class Servidor
 
     public bool Ativo { get; set; } = true;
 
-    // Construtor de domínio (opcional, mas recomendado)
+    // Construtor usado pelo EF Core
+    protected Servidor() { }
+
+    // Construtor de domínio
     public Servidor(string nome, Guid orgaoId, Guid lotacaoId, string? telefone = null, string? email = null, string? sala = null)
     {
         Id = Guid.NewGuid();
