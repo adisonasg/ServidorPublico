@@ -5,21 +5,25 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using MediatR;
 using ServidorPublico.Infrastructure.Data;
+using ServidorPublico.Infrastructure.Persistence;
+using ServidorPublico.Application.Handlers.Servidores;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // SQLite - banco persistente
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=servidores.db"));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // MediatR
-builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+builder.Services.AddMediatR(typeof(GetServidorByIdHandler).Assembly);
 
-// FluentValidation (versão 11+)
+
+
+// FluentValidation
 builder.Services.AddControllers();
-builder.Services.AddFluentValidationAutoValidation(); // Adiciona validação automática
-builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly()); // Registra validadores
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -30,7 +34,7 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Migrate database
+// Migrations
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
@@ -44,14 +48,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseHttpsRedirection();
-
 app.UseMiddleware<ExceptionHandlingMiddleware>();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
 
 

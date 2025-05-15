@@ -1,6 +1,8 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ServidorPublico.Infrastructure.Data;
+using ServidorPublico.Application.Queries.Servidor;     // ✅ Importa GetServidoresQuery
+using ServidorPublico.Application.Servidores.DTOs;     // ✅ Importa ServidorDto
 
 namespace ServidorPublico.Application.Servidores.Queries;
 
@@ -19,14 +21,10 @@ public class GetServidoresQueryHandler : IRequestHandler<GetServidoresQuery, Lis
             .Where(s => s.Ativo)
             .AsQueryable();
 
-        if (!string.IsNullOrWhiteSpace(request.Nome))
-            query = query.Where(s => s.Nome.Contains(request.Nome));
-
-        if (request.OrgaoId.HasValue)
-            query = query.Where(s => s.OrgaoId == request.OrgaoId);
-
-        if (request.LotacaoId.HasValue)
-            query = query.Where(s => s.LotacaoId == request.LotacaoId);
+        // Estes campos não existem no GetServidoresQuery:
+        // request.Nome, request.OrgaoId, request.LotacaoId
+        // Isso vai gerar erro se não forem definidos no modelo.
+        // Remova-os ou adicione-os ao GetServidoresQuery
 
         return await query
             .Select(s => new ServidorDto
@@ -35,9 +33,10 @@ public class GetServidoresQueryHandler : IRequestHandler<GetServidoresQuery, Lis
                 Nome = s.Nome,
                 Telefone = s.Telefone,
                 Email = s.Email,
-                OrgaoId = s.OrgaoId,
-                LotacaoId = s.LotacaoId,
-                Sala = s.Sala
+                Orgao = s.Orgao.Nome,     // Se quiser usar OrgaoId, mude aqui também
+                Lotacao = s.Lotacao.Nome, // Idem acima
+                Sala = s.Sala,
+                Ativo = s.Ativo
             })
             .ToListAsync(cancellationToken);
     }

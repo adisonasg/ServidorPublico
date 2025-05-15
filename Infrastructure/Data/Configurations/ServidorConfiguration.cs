@@ -8,30 +8,29 @@ public class ServidorConfiguration : IEntityTypeConfiguration<Servidor>
 {
     public void Configure(EntityTypeBuilder<Servidor> builder)
     {
-        builder.ToTable("Servidores");
-
         builder.HasKey(s => s.Id);
 
         builder.Property(s => s.Nome)
-            .IsRequired()
-            .HasMaxLength(150);
+               .IsRequired()
+               .HasMaxLength(100);
 
         builder.Property(s => s.Telefone)
-            .HasMaxLength(20);
+               .HasMaxLength(20);
 
         builder.Property(s => s.Email)
-            .HasMaxLength(100);
+               .HasMaxLength(100);
 
         builder.Property(s => s.Sala)
-            .HasMaxLength(20);
+               .HasMaxLength(20);
 
-        builder.Property(s => s.OrgaoId)
-            .IsRequired();
+        builder.HasOne(s => s.Orgao)
+               .WithMany() // ou .WithMany(o => o.Servidores) se tiver navegação reversa
+               .HasForeignKey(s => s.OrgaoId)
+               .OnDelete(DeleteBehavior.Restrict);
 
-        builder.Property(s => s.LotacaoId)
-            .IsRequired();
-
-        builder.Property(s => s.Ativo)
-            .HasDefaultValue(true);
+        builder.HasOne(s => s.Lotacao)
+               .WithMany() // ou .WithMany(l => l.Servidores) se tiver navegação reversa
+               .HasForeignKey(s => s.LotacaoId)
+               .OnDelete(DeleteBehavior.Restrict);
     }
 }

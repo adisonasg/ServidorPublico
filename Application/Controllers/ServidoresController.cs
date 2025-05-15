@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ServidorPublico.Application.Servidores.Commands.Create;
 using ServidorPublico.Application.Servidores.Commands.Inativar;
 using ServidorPublico.Application.Servidores.Commands.Update;
+using ServidorPublico.Application.Queries.Servidor;
 using ServidorPublico.Application.Servidores.Queries;
 
 namespace ServidorPublico.API.Controllers;
@@ -23,7 +24,7 @@ public class ServidoresController : ControllerBase
     public async Task<IActionResult> CriarServidor([FromBody] CreateServidorCommand command)
     {
         var id = await _mediator.Send(command);
-        return CreatedAtAction(nameof(ObterServidorPorId), new { id }, null);
+        return CreatedAtAction(nameof(ObterPorId), new { id }, null);
     }
 
     [HttpGet]
@@ -34,10 +35,12 @@ public class ServidoresController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public IActionResult ObterServidorPorId(Guid id)
+    public async Task<IActionResult> ObterPorId(Guid id)
     {
-        return Ok(); // Implementaremos depois
+        var resultado = await _mediator.Send(new GetServidorByIdQuery(id));
+        return resultado is null ? NotFound() : Ok(resultado);
     }
+
 
 
     [HttpPut("{id}")]

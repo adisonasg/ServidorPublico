@@ -1,0 +1,12 @@
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\Domain\ServidorPublico.Domain\bin\Debug\net8.0\ServidorPublico.Domain.deps.json
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\Domain\ServidorPublico.Domain\bin\Debug\net8.0\ServidorPublico.Domain.dll
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\Domain\ServidorPublico.Domain\bin\Debug\net8.0\ServidorPublico.Domain.pdb
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\Domain\ServidorPublico.Domain\obj\Debug\net8.0\ServidorPublico.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\Domain\ServidorPublico.Domain\obj\Debug\net8.0\ServidorPublico.Domain.AssemblyInfoInputs.cache
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\Domain\ServidorPublico.Domain\obj\Debug\net8.0\ServidorPublico.Domain.AssemblyInfo.cs
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\Domain\ServidorPublico.Domain\obj\Debug\net8.0\ServidorPublico.Domain.csproj.CoreCompileInputs.cache
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\Domain\ServidorPublico.Domain\obj\Debug\net8.0\ServidorPublico.Domain.sourcelink.json
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\Domain\ServidorPublico.Domain\obj\Debug\net8.0\ServidorPublico.Domain.dll
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\Domain\ServidorPublico.Domain\obj\Debug\net8.0\refint\ServidorPublico.Domain.dll
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\Domain\ServidorPublico.Domain\obj\Debug\net8.0\ServidorPublico.Domain.pdb
+C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\Domain\ServidorPublico.Domain\obj\Debug\net8.0\ref\ServidorPublico.Domain.dll
