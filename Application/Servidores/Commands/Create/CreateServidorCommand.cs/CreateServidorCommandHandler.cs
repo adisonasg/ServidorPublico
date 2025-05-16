@@ -15,6 +15,19 @@ public class CreateServidorCommandHandler : IRequestHandler<CreateServidorComman
 
     public async Task<Guid> Handle(CreateServidorCommand request, CancellationToken cancellationToken)
     {
+        // Validações básicas
+        if (string.IsNullOrWhiteSpace(request.Nome))
+            throw new ArgumentException("O nome é obrigatório.");
+
+        if (string.IsNullOrWhiteSpace(request.Email))
+            throw new ArgumentException("O email é obrigatório.");
+
+        if (request.OrgaoId == Guid.Empty)
+            throw new ArgumentException("O ID do órgão é obrigatório.");
+
+        if (request.LotacaoId == Guid.Empty)
+            throw new ArgumentException("O ID da lotação é obrigatório.");
+
         var servidor = new Servidor(
             nome: request.Nome,
             telefone: request.Telefone,
@@ -24,7 +37,7 @@ public class CreateServidorCommandHandler : IRequestHandler<CreateServidorComman
             lotacaoId: request.LotacaoId
         )
         {
-            Id = Guid.NewGuid() // ID gerado aqui
+            Id = Guid.NewGuid()
         };
 
         await _context.Servidores.AddAsync(servidor, cancellationToken);
