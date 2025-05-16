@@ -17,14 +17,17 @@ public class CreateServidorCommandHandler : IRequestHandler<CreateServidorComman
     {
         var servidor = new Servidor(
             nome: request.Nome,
-            orgaoId: request.OrgaoId,
-            lotacaoId: request.LotacaoId,
             telefone: request.Telefone,
             email: request.Email,
-            sala: request.Sala
-        );
+            sala: request.Sala,
+            orgaoId: request.OrgaoId,
+            lotacaoId: request.LotacaoId
+        )
+        {
+            Id = Guid.NewGuid() // ID gerado aqui
+        };
 
-        _context.Servidores.Add(servidor);
+        await _context.Servidores.AddAsync(servidor, cancellationToken);
         await _context.SaveChangesAsync(cancellationToken);
 
         return servidor.Id;

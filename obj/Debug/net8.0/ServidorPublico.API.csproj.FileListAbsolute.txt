@@ -1,7 +1,5 @@
 C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ServidorPublico.API.csproj.AssemblyReference.cache
 C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ServidorPublico.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ServidorPublico.API.AssemblyInfoInputs.cache
-C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ServidorPublico.API.AssemblyInfo.cs
 C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ServidorPublico.API.csproj.CoreCompileInputs.cache
 C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ServidorPublico.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ServidorPublico.API.MvcApplicationPartsAssemblyInfo.cache
@@ -201,5 +199,3 @@ C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.
 C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ServidorPublico.API.pdb
 C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ServidorPublico.API.genruntimeconfig.cache
 C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\obj\Debug\net8.0\ref\ServidorPublico.API.dll
-C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\bin\Debug\net8.0\Infrastructure\ServidorPublico.Infrastructure\obj\project.assets.json
-C:\Users\adison.gualberto\ServidorPublicoAPI\ServidorPublico.API\bin\Debug\net8.0\Infrastructure\ServidorPublico.Infrastructure\obj\ServidorPublico.Infrastructure.csproj.nuget.dgspec.json

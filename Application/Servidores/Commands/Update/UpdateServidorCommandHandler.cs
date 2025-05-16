@@ -20,15 +20,15 @@ public class UpdateServidorCommandHandler : IRequestHandler<UpdateServidorComman
 
         if (servidor == null)
             throw new KeyNotFoundException("Servidor não encontrado.");
-    
-    servidor.Atualizar(
-        request.Nome,
-        request.Telefone,
-        request.Email,
-        request.Sala,
-        request.OrgaoId,
-        request.LotacaoId
-    );
+
+        servidor.Atualizar(
+            request.Nome,
+            request.Telefone,
+            request.Email,
+            request.Sala,
+            request.OrgaoId,
+            request.LotacaoId
+        );
 
         await _context.SaveChangesAsync(cancellationToken);
         return Unit.Value;
